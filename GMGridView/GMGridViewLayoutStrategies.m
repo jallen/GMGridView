@@ -222,9 +222,11 @@
     
     CGFloat itemHeight = self.itemSize.height + self.itemSpacing;
     
-    CGFloat firstRow = MAX(0, (int)(contentOffset.y / itemHeight) - 1);
+//    CGFloat firstRow = MAX(0, (int)(contentOffset.y / itemHeight) - 1);
+		CGFloat firstRow = MAX(0, (int)((contentOffset.y - self.edgeInsets.top) / itemHeight) - 1);
 
-    CGFloat lastRow = ceil((contentOffset.y + self.gridBounds.size.height) / itemHeight);
+//    CGFloat lastRow = ceil((contentOffset.y + self.gridBounds.size.height) / itemHeight);
+		CGFloat lastRow = ceil((contentOffset.y + self.gridBounds.size.height - self.edgeInsets.bottom) / itemHeight);
     
     NSInteger firstPosition = firstRow * self.numberOfItemsPerRow;
     NSInteger lastPosition  = ((lastRow + 1) * self.numberOfItemsPerRow);

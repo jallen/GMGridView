@@ -89,6 +89,9 @@ typedef enum
 
 @property (nonatomic, readonly) UIScrollView *scrollView __attribute__((deprecated)); // The grid now inherits directly from UIScrollView
 
+@property (nonatomic, strong) UIView *gridHeaderView;
+@property (nonatomic, strong) UIView *gridFooterView;
+
 // Reusable cells
 - (GMGridViewCell *)dequeueReusableCell;                              // Should be called in GMGridView:cellForItemAtIndex: to reuse a cell
 - (GMGridViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
