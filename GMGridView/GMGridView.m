@@ -299,7 +299,7 @@ static const UIViewAnimationOptions kDefaultAnimationOptions = UIViewAnimationOp
     [self recomputeSizeAnimated:!(animation & GMGridViewItemAnimationNone)];
     [self relayoutItemsAnimated:animation & GMGridViewItemAnimationFade]; // only supported animation for now
 		[self relayoutGridHeaderView:!(animation & GMGridViewItemAnimationNone)];
-		[self relayoutGridFooterView:!(animation & GMGridViewItemAnimationNone)];
+		[self relayoutGridFooterView:(animation & GMGridViewItemAnimationNone)];
     [self loadRequiredItems];
 }
 
